@@ -8,6 +8,9 @@ model = joblib.load('model_with_scaler.pkl')
 # Define the Streamlit app
 def main():
     st.title('Cardiovascular Disease Risk Prediction')
+
+    # Display home image
+    st.image('home.jpg', use_column_width=True)
     
     # Define layout with 70% for input and 30% for output
     col1, col2 = st.columns([7, 3])
