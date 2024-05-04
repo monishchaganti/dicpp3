@@ -10,7 +10,7 @@ def main():
     st.title('Cardiovascular Disease Risk Prediction')
 
     # Display home image
-    st.image('home.jpg', use_column_width=True)
+    home_image = st.image('home.jpg', use_column_width=True)
     
     # Define layout with 70% for input and 30% for output
     col1, col2 = st.columns([7, 3])
@@ -36,6 +36,9 @@ def main():
 
         # Predict button
         if st.sidebar.button('Predict'):
+            # Empty the home image
+            home_image.empty()
+            
             # Convert categorical variables to numerical
             sex_num = 1 if sex == 'Male' else 0
             BPMeds_num = 0 if BPMeds == 'No' else 1
